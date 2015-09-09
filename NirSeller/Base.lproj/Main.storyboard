@@ -48,7 +48,7 @@
         <!--Order Content View Controller-->
         <scene sceneID="HZo-kX-wba">
             <objects>
-                <viewController id="yfb-cY-fzy" customClass="OrderContentViewController" customModule="NirSeller" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderContentViewID" id="yfb-cY-fzy" customClass="OrderContentViewController" customModule="NirSeller" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wYS-zu-TkN"/>
                         <viewControllerLayoutGuide type="bottom" id="xkk-yG-wxl"/>
@@ -121,11 +121,11 @@
                                             <outlet property="symbolView" destination="mi4-2b-3zZ" id="szs-RK-BSq"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" rowHeight="113" id="jie-vh-gKV" customClass="OrderInfoTableViewCell" customModule="NirSeller" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="78" width="600" height="113"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" rowHeight="114" id="jie-vh-gKV" customClass="OrderInfoTableViewCell" customModule="NirSeller" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="78" width="600" height="114"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jie-vh-gKV" id="bHN-ef-SdY">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="113"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="114"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单号码:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzt-Ft-ZoW">
@@ -156,40 +156,49 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" text="2015090917432800" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBg-cv-Icv">
-                                                    <rect key="frame" x="88" y="15" width="503.5" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" misplaced="YES" text="2015090917432800" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBg-cv-Icv">
+                                                    <rect key="frame" x="87" y="15" width="504.5" height="17"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" text="18463103027" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbX-zD-wpO">
-                                                    <rect key="frame" x="88" y="64" width="503.5" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" misplaced="YES" text="18463103027" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbX-zD-wpO">
+                                                    <rect key="frame" x="87" y="64" width="504.5" height="17"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" text="30分钟后" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRa-8A-4UW">
-                                                    <rect key="frame" x="88" y="87" width="503.5" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" misplaced="YES" text="30分钟后" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRa-8A-4UW">
+                                                    <rect key="frame" x="87" y="87" width="504.5" height="17"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" text="2015-09-09 17:43:28" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLz-uW-ia6">
-                                                    <rect key="frame" x="88" y="39" width="503.5" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" misplaced="YES" text="2015-09-09 17:43:28" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLz-uW-ia6">
+                                                    <rect key="frame" x="87" y="39" width="504.5" height="17"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZ8-ga-We3">
+                                                    <rect key="frame" x="0.0" y="107" width="600" height="6"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
                                             </subviews>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstItem="Btv-s2-CtM" firstAttribute="top" secondItem="zzt-Ft-ZoW" secondAttribute="bottom" constant="7" id="0os-n6-fSz"/>
+                                                <constraint firstItem="SZ8-ga-We3" firstAttribute="leading" secondItem="bHN-ef-SdY" secondAttribute="leading" id="3mK-7E-KEe"/>
                                                 <constraint firstItem="IQD-aD-bu4" firstAttribute="centerX" secondItem="Btv-s2-CtM" secondAttribute="centerX" id="7a2-kc-hFh"/>
                                                 <constraint firstItem="mc9-hb-qxZ" firstAttribute="centerX" secondItem="IQD-aD-bu4" secondAttribute="centerX" id="AXz-ni-gGM"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="SZ8-ga-We3" secondAttribute="bottom" constant="-7" id="AmQ-AV-3UW"/>
+                                                <constraint firstAttribute="trailing" secondItem="SZ8-ga-We3" secondAttribute="trailing" id="Ehv-6D-NPU"/>
+                                                <constraint firstItem="SZ8-ga-We3" firstAttribute="top" secondItem="dRa-8A-4UW" secondAttribute="bottom" constant="3" id="FcN-Bp-zpo"/>
                                                 <constraint firstItem="Btv-s2-CtM" firstAttribute="centerX" secondItem="zzt-Ft-ZoW" secondAttribute="centerX" id="Keb-mb-H6J"/>
                                                 <constraint firstItem="BLz-uW-ia6" firstAttribute="centerX" secondItem="OBg-cv-Icv" secondAttribute="centerX" id="ReG-m6-gX8"/>
                                                 <constraint firstItem="bbX-zD-wpO" firstAttribute="centerY" secondItem="IQD-aD-bu4" secondAttribute="centerY" id="V7l-DZ-zdc"/>
@@ -229,6 +238,9 @@
                             <constraint firstItem="tTP-6X-cn4" firstAttribute="top" secondItem="qQb-UH-wAa" secondAttribute="top" id="kCb-hS-TJ7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="orderTableView" destination="tTP-6X-cn4" id="TUK-wm-NAX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSb-Xg-Kqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

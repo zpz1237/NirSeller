@@ -9,11 +9,25 @@
 import UIKit
 
 class OrderViewController: UIViewController {
-
+    var pageMenu: CAPSPageMenu?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.translucent = false
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        
+        var controllerArray: [UIViewController] = []
+        
+        let newOrderViewController = storyBoard.instantiateViewControllerWithIdentifier("OrderContentViewID") as! OrderContentViewController
+        let oldOrderViewController = storyBoard.instantiateViewControllerWithIdentifier("OrderContentViewID") as! OrderContentViewController
+        
+        controllerArray.append(newOrderViewController)
+        controllerArray.append(oldOrderViewController)
+        
+        
+
     }
 
     override func didReceiveMemoryWarning() {

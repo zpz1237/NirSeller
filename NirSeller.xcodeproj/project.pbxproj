@@ -12,6 +12,7 @@
 		DB2D75131BA000FF006B55BD /* OrderContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2D75121BA000FF006B55BD /* OrderContentViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		DB2D75181BA01177006B55BD /* OrderFoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2D75171BA01177006B55BD /* OrderFoodTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		DB2D751A1BA0118B006B55BD /* OrderInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2D75191BA0118B006B55BD /* OrderInfoTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		DB2D751E1BA01F83006B55BD /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2D751D1BA01F83006B55BD /* OrderModel.swift */; settings = {ASSET_TAGS = (); }; };
 		DBC642931B9FDEE700833D7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC642921B9FDEE700833D7D /* AppDelegate.swift */; };
 		DBC642981B9FDEE800833D7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBC642961B9FDEE800833D7D /* Main.storyboard */; };
 		DBC6429A1B9FDEE800833D7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC642991B9FDEE800833D7D /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 		DB2D75121BA000FF006B55BD /* OrderContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderContentViewController.swift; sourceTree = "<group>"; };
 		DB2D75171BA01177006B55BD /* OrderFoodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderFoodTableViewCell.swift; sourceTree = "<group>"; };
 		DB2D75191BA0118B006B55BD /* OrderInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderInfoTableViewCell.swift; sourceTree = "<group>"; };
+		DB2D751D1BA01F83006B55BD /* OrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		DBC6428F1B9FDEE700833D7D /* NirSeller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NirSeller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC642921B9FDEE700833D7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBC642971B9FDEE800833D7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		DB2D75141BA0010A006B55BD /* OrderModule */ = {
 			isa = PBXGroup;
 			children = (
+				DB2D751D1BA01F83006B55BD /* OrderModel.swift */,
 				DB2D75101BA00062006B55BD /* OrderViewController.swift */,
 				DB2D75121BA000FF006B55BD /* OrderContentViewController.swift */,
 				DB2D75171BA01177006B55BD /* OrderFoodTableViewCell.swift */,
@@ -232,6 +235,7 @@
 				DB2D751A1BA0118B006B55BD /* OrderInfoTableViewCell.swift in Sources */,
 				DB2D75181BA01177006B55BD /* OrderFoodTableViewCell.swift in Sources */,
 				DBC642931B9FDEE700833D7D /* AppDelegate.swift in Sources */,
+				DB2D751E1BA01F83006B55BD /* OrderModel.swift in Sources */,
 				DBC642A81B9FECFA00833D7D /* CAPSPageMenu.swift in Sources */,
 				DB2D75131BA000FF006B55BD /* OrderContentViewController.swift in Sources */,
 				DB2D75111BA00062006B55BD /* OrderViewController.swift in Sources */,
