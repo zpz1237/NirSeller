@@ -8,28 +8,34 @@
 
 import UIKit
 
-class OrderContentViewController: UIViewController, UITableViewDataSource {
+class OrderContentViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var orderTableView: UITableView!
     
-    var dataArray: [OrderModel]?
+    var orderDataArray: [OrderModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("dataArray.count",orderDataArray.count)
+        
         orderTableView.dataSource = self
-       
+        orderTableView.delegate = self
+        
+        orderTableView.rowHeight = UITableViewAutomaticDimension
+        orderTableView.estimatedRowHeight = 80
     }
+
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataArray!.count
+        return orderDataArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //如果取出的是FoodModel
-        guard dataArray![indexPath.row] is InfoModel else {
+        guard orderDataArray[indexPath.row] is InfoModel else {
             let cell = orderTableView.dequeueReusableCellWithIdentifier("foodCell") as! OrderFoodTableViewCell
-            let cellData = dataArray![indexPath.row] as! FoodModel
+            let cellData = orderDataArray[indexPath.row] as! FoodModel
             cell.symbolView.backgroundColor = cellData.symbolViewColor
             cell.foodName.text = cellData.foodName
             cell.foodNumber.text = cellData.foodNumber
@@ -38,7 +44,7 @@ class OrderContentViewController: UIViewController, UITableViewDataSource {
         }
         //取出的是InfoModel
         let cell = orderTableView.dequeueReusableCellWithIdentifier("infoCell") as! OrderInfoTableViewCell
-        let cellData = dataArray![indexPath.row] as! InfoModel
+        let cellData = orderDataArray[indexPath.row] as! InfoModel
         cell.orderNumber.text = cellData.orderNumber
         cell.orderTime.text = cellData.orderTime
         cell.phoneNumber.text = cellData.phoneNumber
