@@ -16,6 +16,7 @@
 		DB57D6D51BA16AE800FA9B1C /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB57D6D41BA16AE800FA9B1C /* MenuTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		DB57D6D71BA16B0900FA9B1C /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB57D6D61BA16B0900FA9B1C /* MenuTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		DB57D6DA1BA1722E00FA9B1C /* menuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB57D6D91BA1722E00FA9B1C /* menuModel.swift */; settings = {ASSET_TAGS = (); }; };
+		DBB00F1C1BA555C500F9F509 /* MenuAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB00F1B1BA555C500F9F509 /* MenuAddViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		DBC642931B9FDEE700833D7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC642921B9FDEE700833D7D /* AppDelegate.swift */; };
 		DBC642981B9FDEE800833D7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBC642961B9FDEE800833D7D /* Main.storyboard */; };
 		DBC6429A1B9FDEE800833D7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC642991B9FDEE800833D7D /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		DB57D6D41BA16AE800FA9B1C /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		DB57D6D61BA16B0900FA9B1C /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		DB57D6D91BA1722E00FA9B1C /* menuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menuModel.swift; sourceTree = "<group>"; };
+		DBB00F1B1BA555C500F9F509 /* MenuAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuAddViewController.swift; sourceTree = "<group>"; };
 		DBC6428F1B9FDEE700833D7D /* NirSeller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NirSeller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC642921B9FDEE700833D7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBC642971B9FDEE800833D7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				DB57D6D91BA1722E00FA9B1C /* menuModel.swift */,
 				DB57D6D61BA16B0900FA9B1C /* MenuTableViewController.swift */,
 				DB57D6D41BA16AE800FA9B1C /* MenuTableViewCell.swift */,
+				DBB00F1B1BA555C500F9F509 /* MenuAddViewController.swift */,
 			);
 			name = MenuModule;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				DBC642931B9FDEE700833D7D /* AppDelegate.swift in Sources */,
 				DB2D751E1BA01F83006B55BD /* OrderModel.swift in Sources */,
 				DB57D6D71BA16B0900FA9B1C /* MenuTableViewController.swift in Sources */,
+				DBB00F1C1BA555C500F9F509 /* MenuAddViewController.swift in Sources */,
 				DBC642A81B9FECFA00833D7D /* CAPSPageMenu.swift in Sources */,
 				DB2D75131BA000FF006B55BD /* OrderContentViewController.swift in Sources */,
 				DB2D75111BA00062006B55BD /* OrderViewController.swift in Sources */,

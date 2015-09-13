@@ -13,6 +13,7 @@ class MenuTableViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var menuTableView: UITableView!
     
     var menuDataArray: [MenuModel] = []
+    var tempMenuModel: MenuModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,13 @@ class MenuTableViewController: UIViewController, UITableViewDataSource, UITableV
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if let new = tempMenuModel {
+            menuDataArray.append(new)
+            menuTableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,6 +89,10 @@ class MenuTableViewController: UIViewController, UITableViewDataSource, UITableV
             menuDataArray.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
+    }
+    
+    @IBAction  func unwindToMenuTableView(unwindSegue: UIStoryboardSegue) {
+        
     }
     
 
