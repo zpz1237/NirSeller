@@ -4,6 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--菜单-->
@@ -97,7 +98,7 @@
                     <navigationItem key="navigationItem" title="菜单" id="ale-sq-AJE">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="MxV-w5-Bgk">
                             <connections>
-                                <segue destination="n2Y-X6-xQW" kind="presentation" id="KsS-2e-faI"/>
+                                <segue destination="n2Y-X6-xQW" kind="presentation" identifier="addNewMenu" id="KsS-2e-faI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -357,7 +358,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="菜名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0r0-nf-YAw">
-                                <rect key="frame" x="35" y="412" width="530" height="30"/>
+                                <rect key="frame" x="35" y="412" width="397.5" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -376,29 +377,46 @@
                                     <constraint firstAttribute="width" secondItem="kJ0-oX-IlV" secondAttribute="height" multiplier="16:9" id="rA0-Wn-Ztn"/>
                                 </constraints>
                                 <state key="normal" image="jipai"/>
+                                <connections>
+                                    <action selector="choosePhoto:" destination="W2F-n6-c33" eventType="touchUpInside" id="LwD-zn-05r"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="价格" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5e7-46-89T">
+                                <rect key="frame" x="447.5" y="412" width="117.5" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kJ0-oX-IlV" firstAttribute="top" secondItem="kF1-FK-LXE" secondAttribute="bottom" constant="30" id="3iR-QE-Mw7"/>
+                            <constraint firstItem="5e7-46-89T" firstAttribute="leading" secondItem="0r0-nf-YAw" secondAttribute="trailing" constant="15" id="5ED-lz-TfE"/>
                             <constraint firstItem="Bm4-p3-9qB" firstAttribute="leading" secondItem="cT5-ee-YGP" secondAttribute="leading" constant="5" id="AdZ-GV-tvB"/>
+                            <constraint firstItem="5e7-46-89T" firstAttribute="centerY" secondItem="0r0-nf-YAw" secondAttribute="centerY" id="HF9-kr-n77"/>
+                            <constraint firstItem="cT5-ee-YGP" firstAttribute="trailing" secondItem="kJ0-oX-IlV" secondAttribute="trailing" id="Qbu-nX-6Ck"/>
                             <constraint firstItem="8hr-Gv-jcV" firstAttribute="top" secondItem="cT5-ee-YGP" secondAttribute="bottom" constant="30" id="RA5-9X-HvQ"/>
+                            <constraint firstItem="0r0-nf-YAw" firstAttribute="width" secondItem="kJ0-oX-IlV" secondAttribute="width" multiplier="3:4" id="TMy-yL-j8h"/>
                             <constraint firstItem="kJ0-oX-IlV" firstAttribute="leading" secondItem="er8-E7-0RL" secondAttribute="leadingMargin" constant="15" id="V4B-E8-l2h"/>
                             <constraint firstItem="Bm4-p3-9qB" firstAttribute="top" secondItem="cT5-ee-YGP" secondAttribute="top" constant="8" id="bYf-Mo-Vca"/>
                             <constraint firstItem="cT5-ee-YGP" firstAttribute="leading" secondItem="0r0-nf-YAw" secondAttribute="leading" id="eA9-lR-8h9"/>
                             <constraint firstItem="0r0-nf-YAw" firstAttribute="leading" secondItem="kJ0-oX-IlV" secondAttribute="leading" id="iG7-m0-33X"/>
                             <constraint firstItem="cT5-ee-YGP" firstAttribute="top" secondItem="0r0-nf-YAw" secondAttribute="bottom" constant="24" id="n1l-tu-ZiK"/>
-                            <constraint firstItem="0r0-nf-YAw" firstAttribute="trailing" secondItem="kJ0-oX-IlV" secondAttribute="trailing" id="odm-E2-bpI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kJ0-oX-IlV" secondAttribute="trailing" constant="15" id="pnW-le-Eph"/>
-                            <constraint firstItem="cT5-ee-YGP" firstAttribute="trailing" secondItem="0r0-nf-YAw" secondAttribute="trailing" id="wYt-5i-Wrb"/>
+                            <constraint firstItem="5e7-46-89T" firstAttribute="trailing" secondItem="kJ0-oX-IlV" secondAttribute="trailing" id="y3F-Qw-5Np"/>
                             <constraint firstItem="0r0-nf-YAw" firstAttribute="top" secondItem="kJ0-oX-IlV" secondAttribute="bottom" constant="20" id="ysN-4D-t9c"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="添加菜品" id="dqd-1e-InW">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zAG-Ap-s0M">
+                            <connections>
+                                <segue destination="rMp-tq-Qrd" kind="unwind" unwindAction="unwindToMenuTableView:" id="ycn-Mp-W4d"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Mxh-dg-Pxs">
                             <connections>
-                                <segue destination="rMp-tq-Qrd" kind="unwind" unwindAction="unwindToMenuTableView:" id="hp8-4J-3t7"/>
+                                <action selector="doneButtonClicked:" destination="W2F-n6-c33" id="Pcy-fq-PMp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -407,6 +425,7 @@
                         <outlet property="newMenuDescribe" destination="cT5-ee-YGP" id="QdI-1D-aLx"/>
                         <outlet property="newMenuImage" destination="kJ0-oX-IlV" id="HKA-rE-qED"/>
                         <outlet property="newMenuName" destination="0r0-nf-YAw" id="WfV-1l-Qjd"/>
+                        <outlet property="newMenuPrice" destination="5e7-46-89T" id="AS1-aD-LEW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDq-YG-Q87" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -498,7 +517,6 @@
         <!--Navigation Controller-->
         <scene sceneID="cVa-4W-4Qp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6wU-km-Y0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n2Y-X6-xQW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YVQ-vO-39Y">
@@ -511,6 +529,7 @@
                         <segue destination="W2F-n6-c33" kind="relationship" relationship="rootViewController" id="3nt-rN-qi2"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6wU-km-Y0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2623" y="798"/>
         </scene>

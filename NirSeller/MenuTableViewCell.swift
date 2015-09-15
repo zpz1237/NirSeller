@@ -11,7 +11,6 @@ import UIKit
 class MenuTableViewCell: UITableViewCell {
 
     @IBOutlet weak var menuImageView: UIImageView!
-    
     @IBOutlet weak var menuName: UILabel!
     @IBOutlet weak var menuPrice: UILabel!
     @IBOutlet weak var menuDescribe: UILabel!

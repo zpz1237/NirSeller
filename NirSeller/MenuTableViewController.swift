@@ -8,12 +8,11 @@
 
 import UIKit
 
-class MenuTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MenuTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MenuAddViewDelegate {
 
     @IBOutlet weak var menuTableView: UITableView!
     
     var menuDataArray: [MenuModel] = []
-    var tempMenuModel: MenuModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,13 +36,6 @@ class MenuTableViewController: UIViewController, UITableViewDataSource, UITableV
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        if let new = tempMenuModel {
-            menuDataArray.append(new)
-            menuTableView.reloadData()
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,7 +65,10 @@ class MenuTableViewController: UIViewController, UITableViewDataSource, UITableV
         return cell
     }
     
-
+    func insertNewData(newData: MenuModel) {
+        menuDataArray.append(newData)
+        menuTableView.reloadData()
+    }
     
     // Override to support conditional editing of the table view.
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -111,14 +106,21 @@ class MenuTableViewController: UIViewController, UITableViewDataSource, UITableV
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+
+        if segue.identifier == "addNewMenu" {
+            if let nav = segue.destinationViewController as? UINavigationController {
+                if let dest = nav.topViewController as? MenuAddViewController {
+                    dest.delegate = self
+                }
+            }
+        }
+        
     }
-    */
+
 
 }
