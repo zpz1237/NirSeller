@@ -9,12 +9,15 @@
 import UIKit
 
 class OrderViewController: UIViewController {
+   
     var pageMenu: CAPSPageMenu?
+    var newOrderViewController: OrderContentViewController!
+    var oldOrderViewController: OrderContentViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.navigationBar.translucent = false
+        //self.navigationController?.navigationBar.translucent = false
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
@@ -26,8 +29,11 @@ class OrderViewController: UIViewController {
         let testDataD = FoodModel(symbolViewColor: UIColor.lightGrayColor(), foodName: "宝岛招牌饭", foodNumber: "1", foodPrice: "￥13")
         let testDataE = InfoModel(orderNumber: "2015091011234900", orderTime: "2015-09-10 11:23:49", phoneNumber: "18953831358", delayTime: "45分钟后")
         
-        let newOrderViewController = storyBoard.instantiateViewControllerWithIdentifier("OrderContentViewID") as! OrderContentViewController
-        let oldOrderViewController = storyBoard.instantiateViewControllerWithIdentifier("OrderContentViewID") as! OrderContentViewController
+        newOrderViewController = storyBoard.instantiateViewControllerWithIdentifier("OrderContentViewID") as! OrderContentViewController
+        oldOrderViewController = storyBoard.instantiateViewControllerWithIdentifier("OrderContentViewID") as! OrderContentViewController
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchToSecondPageFunction", name: "switchToSecondPage", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchToFirstPageFunction", name: "switchToFirstPage", object: nil)
         
         newOrderViewController.orderDataArray.append(testDataA)
         newOrderViewController.orderDataArray.append(testDataB)
@@ -60,11 +66,45 @@ class OrderViewController: UIViewController {
             .MenuItemSeparatorPercentageHeight(0.1)
         ]
         
-        pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRectMake(0.0, 0.0, self.view.frame.width, self.view.frame.height), pageMenuOptions: parameters)
+        pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRectMake(0.0, 64.0, self.view.frame.width, self.view.frame.height - 64), pageMenuOptions: parameters)
         
         self.view.addSubview(pageMenu!.view)
         
     }
+    
+    func switchToSecondPageFunction() {
+        self.navigationItem.rightBarButtonItem?.title = ""
+    }
+    
+    func switchToFirstPageFunction() {
+        self.navigationItem.rightBarButtonItem?.title = "下一单"
+    }
+
+    @IBAction func didClickedNextButton(sender: UIBarButtonItem) {
+        
+        let num = 3
+        
+        for i in 1...num {
+            oldOrderViewController.orderDataArray.insert(newOrderViewController.orderDataArray[num-i], atIndex: 0)
+        }
+        for _ in 1...num {
+            newOrderViewController.orderDataArray.removeFirst()
+        }
+        
+//        print(newOrderViewController.orderDataArray)
+        newOrderViewController.orderTableView.beginUpdates()
+        newOrderViewController.orderTableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0), NSIndexPath(forRow: 1, inSection: 0), NSIndexPath(forRow: 2, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Top)
+        newOrderViewController.orderTableView.endUpdates()
+        
+//        oldOrderViewController.orderTableView.beginUpdates()
+//        oldOrderViewController.orderTableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0), NSIndexPath(forRow: 1, inSection: 0), NSIndexPath(forRow: 2, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Top)
+//        oldOrderViewController.orderTableView.endUpdates()
+        
+        
+        
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

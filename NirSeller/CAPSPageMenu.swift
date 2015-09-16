@@ -102,7 +102,15 @@ public class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureReco
     
     var selectionIndicatorView : UIView = UIView()
     
-    var currentPageIndex : Int = 0
+    var currentPageIndex : Int = 0 {
+        willSet {
+            if newValue == 1 {
+                NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "switchToSecondPage", object: nil))
+            } else {
+                NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "switchToFirstPage", object: nil))
+            }
+        }
+    }
     var lastPageIndex : Int = 0
     
     public var selectionIndicatorColor : UIColor = UIColor.whiteColor()

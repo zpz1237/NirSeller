@@ -124,7 +124,13 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="订单" id="i6x-m3-6w9"/>
+                    <navigationItem key="navigationItem" title="订单" id="i6x-m3-6w9">
+                        <barButtonItem key="rightBarButtonItem" title="下一单" id="jmM-TW-qZ2">
+                            <connections>
+                                <action selector="didClickedNextButton:" destination="9Um-WU-XtF" id="Lr3-xN-olC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p38-Ut-v14" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -468,7 +474,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="餐厅" id="Y6u-A6-CuH"/>
+                    <tabBarItem key="tabBarItem" title="餐厅" image="Home" id="Y6u-A6-CuH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DPh-bS-2B1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -478,7 +484,7 @@
         <scene sceneID="Scs-zp-ACv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7j7-zS-ZWI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="订单" id="SKh-U3-pwf"/>
+                    <tabBarItem key="tabBarItem" title="订单" image="Calender" id="SKh-U3-pwf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yaq-hk-aZy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -498,7 +504,7 @@
         <scene sceneID="O37-x3-C9Z">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8fe-WA-tnc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="菜单" id="pLq-I3-Sk5"/>
+                    <tabBarItem key="tabBarItem" title="菜单" image="Explore" id="pLq-I3-Sk5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CWn-SK-Soc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -535,6 +541,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Calender" width="32" height="32"/>
+        <image name="Explore" width="32" height="32"/>
+        <image name="Home" width="32" height="32"/>
         <image name="jipai" width="121" height="75"/>
     </resources>
 </document>

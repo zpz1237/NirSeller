@@ -25,6 +25,10 @@ class OrderContentViewController: UIViewController, UITableViewDataSource, UITab
         orderTableView.rowHeight = UITableViewAutomaticDimension
         orderTableView.estimatedRowHeight = 80
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        orderTableView.reloadData()
+    }
 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
